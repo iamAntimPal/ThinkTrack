@@ -7,9 +7,10 @@ This repository contains Python scripts to manage and record your expense data u
 - **Expense Header Setup:**  
   `expense_header_setup.py`  
   This script creates the expense CSV file with the following header if it doesn't exist:
-  ```
+
+```md
   Date,Amount,Category,Account,Note,Description
-  ```
+```
 
 - **Expense Tracker:**  
   `expense_tracker.py`  
@@ -52,6 +53,17 @@ The CSV file is structured with the following headers:
    ```bash
    python expense_tracker.py
    ```
+
+## Template for Adding Expenses
+
+You can use this template format to manually add expenses to the CSV file or enter them using the script:
+
+| Date       | Amount | Category  | Account     | Note          | Description              |
+| ---------- | ------ | --------- | ----------- | ------------- | ------------------------ |
+| 2025-04-07 | 50.00  | Food      | Credit Card | Lunch at work | Bought lunch at a café   |
+| 2025-04-06 | 20.00  | Transport | Cash        | Bus fare      | Travel to the office     |
+| 2025-04-05 | 100.00 | Shopping  | Debit Card  | Clothes       | Purchased new T-shirt    |
+| 2025-04-04 | 30.00  | Bills     | Online Pay  | Internet Bill | Monthly internet payment |
 
 ## Requirements
 
