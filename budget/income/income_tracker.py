@@ -2,7 +2,7 @@ import csv
 import os
 
 # File path for income CSV file
-FILE_PATH = r'C:/Users/antim/OneDrive/Documents/GitHub/ThinkTrack/budget/income/Income.csv'
+FILE_PATH = r'C:/Users/antim/OneDrive/Documents/GitHub/ThinkTrack/budget/income/income.csv'
 
 def append_csv_row(row):
     """
