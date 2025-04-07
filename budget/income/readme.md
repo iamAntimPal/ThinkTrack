@@ -12,13 +12,14 @@ This repository contains Python scripts to manage and record your income data us
   Date,Amount,Category,Account,Note,Description
   ```
 
-- **Initial Income Data:**  
-  `income_initial_data.py`  
-  This script adds an initial income record to the CSV file. You can modify the record details as needed.
 
 - **Income Tracker:**  
   `income_tracker.py`  
   This script lets you add new income entries via the command line. It appends your data to the CSV file without overwriting any existing content.
+
+- **income.csv:**
+  `income.csv`
+  This is the file that all income data stored. 
 
 ## CSV File Format
 
@@ -62,7 +63,4 @@ The CSV file is structured with the following headers:
 
 Feel free to modify the scripts to suit your personal requirements. You can change the CSV file path, modify field names, or add additional functionality as needed.
 
-Happy tracking!
-```
-
-This `README.md` provides an overview of your income tracking system, instructions on setup, and how to use each script. Adjust any details to better match your specific workflow if needed.
+## Happy tracking!
