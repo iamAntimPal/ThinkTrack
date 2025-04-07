@@ -1,0 +1,20 @@
+name: "Motivate on PR Merge"
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  motivate:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post motivational message
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          token: ${{ secrets.GIT_PATH }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            🎉 **Congratulations on merging your PR!**  
+            “The only way to do great work is to love what you do.” – Steve Jobs  
+            Keep pushing forward and building amazing things! 🚀
