@@ -58,7 +58,7 @@ python monthly_summary.py
 - **Pie Chart:** Distribution of expenses by category.
 
 ## Motivation
-Tracking your income and expenses helps in financial planning and ensures better budgeting. Use this script to maintain financial discipline and improve savings!
+Tracking your income and expenses helps in financial planning and ensures better budgeting. Use this script to maintain financial discipline and improve savings!\
 
 ---
 Happy tracking! 🚀
