@@ -32,16 +32,19 @@ The CSV file is structured with the following headers:
 
 ## How to Use
 
-1. **Set Up the Income CSV File:**
+1. **Replace the File path to your File Location and give your file path for working**
+   - Run the command for that:
+     ```python
+     # File path for income CSV file
+     FILE_PATH = r'C:/Users/antim/OneDrive/Documents/GitHub/ThinkTrack/budget/income/Income.csv'
+     #replace with
+     FILE_PATH = r'Your file location.csv'
+      ```  
+
+2. **Set Up the Income CSV File:**
    - Run the header setup script to create the CSV file with the correct header (if it doesn't already exist):
      ```bash
      python income_header_setup.py
-     ```
-
-2. **Add an Initial Income Record (Optional):**
-   - Run the initial data script to add your first income record:
-     ```bash
-     python income_initial_data.py
      ```
 
 3. **Add New Income Entries:**
