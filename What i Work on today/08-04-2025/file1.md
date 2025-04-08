@@ -40,3 +40,6 @@ The CLT states that, given a sufficiently large sample size (\(n\)), the **sampl
 - **Extreme Populations**: Heavily skewed or outlier-prone distributions may require very large \(n\) for CLT to apply .  
 - **Dependent Data**: CLT assumes independent samples; time-series or spatial data may violate this .  
 
+
+
+working on pr greeting now checking for that .
