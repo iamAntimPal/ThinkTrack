@@ -1,4 +1,3 @@
-
 ### **Table of Contents**  
 1. **Introduction to Statistics**  
    - Definition, purpose, and importance of statistics   
