@@ -1,0 +1,16 @@
+name: PR Greeting
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet PR Author
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_PATH }}
+        run: |
+          echo "Hello! 👋 Thank you for your pull request. We appreciate your contribution to our project. 🚀" > greeting.md
+          gh pr comment ${{ github.event.pull_request.number }} --body "$(cat greeting.md)"
