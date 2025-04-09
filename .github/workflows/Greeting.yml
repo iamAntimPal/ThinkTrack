@@ -1,7 +1,7 @@
 name: Greeting
-on: push
+on: [push, workflow_dispatch]
 jobs:
-     greet:
+     test:
           runs-on: ubuntu-latest
           steps:
                - name: "Greet user"
