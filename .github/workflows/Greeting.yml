@@ -16,7 +16,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GIT_BOT }}
           # here issue_message is not given since the condition checks for the merge is true. it will
           # does not pass the checks in issue
-          PR_message: 'add a message over here for the pull request'
+          pr_message: 'add a message over here for the pull request'
            
       - uses: Manoj-Paramsetti/greets-action@main
         if: ${{ github.event.pull_request.merged == false}}
