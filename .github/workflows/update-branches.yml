@@ -3,50 +3,46 @@ name: Update All Branches with Main
 on:
   push:
     branches:
-      - main
+     ).
+
+3. **Update the Workflow with PAT:**
+   - Store the - main
 
 jobs:
   update-branches:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu PAT as a secret in your repository settings.
+  -latest
     steps:
-      - name: Checkout main branch
-        uses: actions/checkout@v3
+      - name: Checkout repository
+ - Update the workflow to use this PAT for authentication.
+
+        uses: actions/checkout@v2
         with:
-          ref: main
-          fetch-depth: 0  # fetch the entire history so all branches are available
+          token:Here is the updated workflow file (`.github/workflows ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Configure Git
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
+      - name: Update/update-branches.yml`) with the PAT:
 
-      - name: Get list of branches and merge main into each
-        env:
-          GITHUB_TOKEN: ${{ secrets.GIT_PATH }}
+```yaml
+ branches
         run: |
-          # Fetch all branches
           git fetch --all
+          git checkout main
+          git pull
+name: Update All Branches with Main
 
-          # Get a list of remote branches (excluding main)
-          branches=$(git branch -r | grep -v 'origin/main' | sed 's/ *origin\///')
-          echo "Found branches: $branches"
-          
-          for branch in $branches; do
-            echo "Processing branch: $branch"
+on:
+  schedule:
+          git push origin main
 
-            # Checkout the branch
-            git checkout $branch
+      - name: Push    - cron: '0 0 * * *'
 
-            # Merge main into the branch without prompting for a commit message
-            merge_output=$(git merge origin/main --no-edit 2>&1)
-            echo "$merge_output"
+jobs:
+  update-branches:
+ changes
+        run: |
+          git push origin main
+           runs-on: ubuntu-latest
 
-            # Check for conflicts by looking for merge conflict markers in the output
-            if echo "$merge_output" | grep -q 'CONFLICT'; then
-              echo "Merge conflicts detected in branch $branch. Skipping push. Please resolve manually."
-              continue
-            fi
-
-            # Push the branch if merge was successful
-            git push origin $branch
-          done
+    steps:
+      - name: env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
