@@ -96,7 +96,7 @@ flowchart TB;
     Readme.md
 ```
 ```mermaid
-graph TR;
+graph TD;
     root((THINKTRACK)) --> Budget
     Budget --> Income
     Budget --> Expense
