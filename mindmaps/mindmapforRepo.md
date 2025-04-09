@@ -60,3 +60,38 @@ graph TD;
     Contributing.md
     Readme.md
 ```
+
+```mermaid
+flowchart TB;
+    root((THINKTRACK))
+    subgraph Budget
+        Income
+        Expense
+        Summary
+        Templates
+    end
+    subgraph Daily_Routine
+        Months
+        Templates
+    end
+    subgraph Habits
+        Daily_Habits
+    end
+    subgraph Journal
+        Months
+        April
+    end
+    subgraph Mindmaps
+        Mindsets
+    end
+    subgraph Thoughts
+        Goals
+        Self_Reflection
+    end
+    subgraph What_I_Work_On_Today
+        Months
+        Day
+    end
+    Contributing.md
+    Readme.md
+```
