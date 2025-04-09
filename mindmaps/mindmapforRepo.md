@@ -95,3 +95,38 @@ flowchart TB;
     Contributing.md
     Readme.md
 ```
+```mermaid
+graph TD;
+    root((THINKTRACK)) --> Budget
+    Budget --> Income
+    Budget --> Expense
+    Budget --> Summary
+    Budget --> Templates
+    
+    root --> Daily_Routine
+    Daily_Routine --> Months
+    Daily_Routine --> Templates
+    
+    root --> Habits
+    Habits --> Daily_Habits
+    
+    root --> Journal
+    Journal --> Months
+    Journal --> April
+    
+    root --> Mindmaps
+    Mindmaps --> Mindsets
+    
+    root --> Thoughts
+    Thoughts --> Goals
+    Thoughts --> Self_Reflection
+    
+    root --> What_I_Work_On_Today
+    What_I_Work_On_Today --> Months
+    What_I_Work_On_Today --> Day
+    
+    root --> Contributing.md
+    root --> Readme.md
+```
+
+
