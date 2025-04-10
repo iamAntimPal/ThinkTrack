@@ -3,11 +3,11 @@ import tkinter as tk
 from tkinter import messagebox, filedialog
 import pandas as pd
 from fpdf import FPDF
-from data import database
+from data.database import Database
 
 class ReportsFrame(tk.Frame):
     """
-    Reporting interface for generating and exporting reports.
+    Interface to generate reports and export them as PDF or Excel.
     """
     def __init__(self, master, user, **kwargs):
         super().__init__(master, **kwargs)
@@ -20,13 +20,12 @@ class ReportsFrame(tk.Frame):
         tk.Button(self, text="Export as Excel", command=self.export_excel).pack(pady=5)
 
     def export_pdf(self):
-        # Dummy report generation with fpdf
         try:
             pdf = FPDF()
             pdf.add_page()
             pdf.set_font("Arial", size=12)
             pdf.cell(200, 10, txt="Budget Report", ln=True, align="C")
-            # Here you would add report details
+            # Populate report with data here...
             file_path = filedialog.asksaveasfilename(defaultextension=".pdf")
             pdf.output(file_path)
             messagebox.showinfo("Success", "Report exported to PDF successfully!")
@@ -34,7 +33,6 @@ class ReportsFrame(tk.Frame):
             messagebox.showerror("Error", f"Error exporting PDF: {e}")
 
     def export_excel(self):
-        # Generate a dummy DataFrame; in production, query your database for report data.
         try:
             data = {
                 "Category": ["Food", "Rent", "Entertainment"],

@@ -2,11 +2,11 @@
 
 class Entry:
     """
-    Data model for income/expense entry.
+    Data model for income/expense entries.
     """
     def __init__(self, user_id, entry_type, amount, currency, category, date, description):
         self.user_id = user_id
-        self.entry_type = entry_type  # Either "income" or "expense"
+        self.entry_type = entry_type  # "income" or "expense"
         self.amount = amount
         self.currency = currency
         self.category = category
