@@ -1,8 +1,17 @@
 name: Greeting
 on: [push, workflow_dispatch]
 jobs:
-     greet:
-          runs-on: ubuntu-latest
-          steps:
-               - name: "Greet user"
-                 run: echo "Hello, world!"
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet user
+        run: echo "Hello, world!"
+      - name: Greet user with name
+        if: github.actor != 'github-actions[bot]'
+        run: echo "Hello, ${{ github.actor }}!"
+      - name: Greet with welcome message
+        if: github.actor != 'github-actions[bot]'
+        run: echo "Hello, ${{ github.actor }}! Welcome to the repository."
+      - name: Extended welcome message
+        if: github.actor != 'github-actions[bot]'
+        run: echo "Hello, ${{ github.actor }}! Welcome to the repository. We are glad to have you here."
