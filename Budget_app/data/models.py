@@ -23,7 +23,7 @@ class RecurringTransaction:
         self.amount = amount
         self.currency = currency
         self.category = category
-        self.frequency = frequency  # e.g., 'daily', 'weekly', 'monthly'
+        self.frequency = frequency  # e.g., "daily", "weekly", "monthly"
         self.start_date = start_date
         self.end_date = end_date
         self.last_occurrence = last_occurrence

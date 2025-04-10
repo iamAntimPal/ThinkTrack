@@ -5,7 +5,7 @@ from app.auth import AuthManager
 
 class BaseFrame(tk.Frame):
     """
-    A base frame for common styling.
+    Base frame with common padding.
     """
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
@@ -22,16 +22,13 @@ class LoginForm(BaseFrame):
         self.build_form()
 
     def build_form(self):
-        tk.Label(self, text="Login", font=('Arial', 20)).pack(pady=10)
-        
+        tk.Label(self, text="Login", font=("Arial", 20)).pack(pady=10)
         self.username_entry = tk.Entry(self)
         self.username_entry.insert(0, "Username")
         self.username_entry.pack(pady=5)
-        
-        self.password_entry = tk.Entry(self, show='*')
+        self.password_entry = tk.Entry(self, show="*")
         self.password_entry.insert(0, "Password")
         self.password_entry.pack(pady=5)
-
         tk.Button(self, text="Login", command=self.authenticate).pack(pady=10)
         tk.Button(self, text="Register", command=self.register).pack(pady=5)
 
@@ -53,21 +50,25 @@ class LoginForm(BaseFrame):
         else:
             messagebox.showerror("Error", "Registration failed. Username may already exist.")
 
-"""
-class RegisterForm(BaseFrame):
+class MainMenu(BaseFrame):
     """
-    Registration form for new users.
+    Main menu with navigation options and a dark/light theme toggle button.
     """
-    def __init__(self, master, on_success, auth_manager: AuthManager, **kwargs):
+    def __init__(self, master, user, on_nav, on_toggle, **kwargs):
         super().__init__(master, **kwargs)
-        self.on_success = on_success
-        self.auth_manager = auth_manager
-        self.build_form()
+        self.user = user
+        self.on_nav = on_nav
+        self.on_toggle = on_toggle
+        self.build_menu()
 
-    def build_form(self):
-        tk.Label(self, text="Register", font=('Arial', 20)).pack(pady=10)
+    def build_menu(self):
+        welcome = f"Welcome, {self.user['username']}"
+        tk.Label(self, text=welcome, font=("Arial", 18)).pack(pady=10)
         
-        self.username_entry = tk.Entry(self)
-        self.username_entry.insert(0, "Username")
-        self.username_entry.pack(pady=5)
-"""      
+        # Navigation buttons
+        options = ["Dashboard", "Add Entry", "Reports", "Logout"]
+        for option in options:
+            tk.Button(self, text=option, width=20, command=lambda opt=option: self.on_nav(opt)).pack(pady=5)
+        
+        # Theme toggle button
+        tk.Button(self, text="Toggle Theme", width=20, command=self.on_toggle).pack(pady=15)

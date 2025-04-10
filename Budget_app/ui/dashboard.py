@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 class DashboardFrame(tk.Frame):
     """
-    Main dashboard displaying user summaries and charts.
+    Dashboard displaying a welcome message and a sample chart.
     """
     def __init__(self, master, user, **kwargs):
         super().__init__(master, **kwargs)
@@ -13,21 +13,13 @@ class DashboardFrame(tk.Frame):
         self.build_dashboard()
 
     def build_dashboard(self):
-        welcome_msg = f"Welcome, {self.user['username']}"
-        tk.Label(self, text=welcome_msg, font=('Arial', 16)).pack(pady=10)
-
-        # Create a chart frame
-        chart_frame = tk.Frame(self)
-        chart_frame.pack(fill='both', expand=True)
-
-        # Sample chart data (replace with dynamic data)
-        categories = ['Food', 'Rent', 'Entertainment']
+        tk.Label(self, text=f"Dashboard for {self.user['username']}", font=("Arial", 16)).pack(pady=10)
+        # Sample pie chart data
+        categories = ["Food", "Rent", "Entertainment"]
         amounts = [250, 800, 150]
-
         fig, ax = plt.subplots(figsize=(4, 3))
-        ax.pie(amounts, labels=categories, autopct='%1.1f%%')
+        ax.pie(amounts, labels=categories, autopct="%1.1f%%")
         ax.set_title("Expense Breakdown")
-
-        canvas = FigureCanvasTkAgg(fig, master=chart_frame)
+        canvas = FigureCanvasTkAgg(fig, master=self)
         canvas.draw()
-        canvas.get_tk_widget().pack()
+        canvas.get_tk_widget().pack(pady=10)
