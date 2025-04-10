@@ -1,0 +1,7 @@
+bcrypt
+tkcalendar
+matplotlib
+fpdf
+pandas
+openpyxl
+schedule
