@@ -1,19 +1,24 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from datetime import datetime
 
 def add_task_to_google_sheet(date, time, task, category, notes):
-    # Define the scope
-    scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+    try:
+        # Define the scope
+        scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
-    # Add credentials
-    creds = ServiceAccountCredentials.from_json_keyfile_name('path/to/credentials.json', scope)
-    client = gspread.authorize(creds)
+        # Add credentials
+        creds = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)  # Ensure the credentials file is in the same directory
+        client = gspread.authorize(creds)
 
-    # Open the Google Sheet
-    sheet = client.open_by_url("https://docs.google.com/spreadsheets/d/1EScriheq3E8W33obwlpmkEkGvjetWl68sYV9g8U0uFg/edit?gid=0#gid=0").sheet1
+        # Open the Google Sheet
+        sheet = client.open_by_url("https://docs.google.com/spreadsheets/d/1EScriheq3E8W33obwlpmkEkGvjetWl68sYV9g8U0uFg/edit?gid=0").sheet1
 
-    # Append the data
-    sheet.append_row([date, time, task, category, notes])
+        # Append the data
+        sheet.append_row([date, time, task, category, notes])
+        print("Task added successfully to Google Sheet!")
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
     print("Add a new task to your Google Sheet daily routine")
@@ -24,4 +29,3 @@ if __name__ == "__main__":
     notes = input("Enter any additional notes: ")
 
     add_task_to_google_sheet(date, time, task, category, notes)
-    print("Task added successfully to Google Sheet!")
