@@ -5,3 +5,4 @@ Date,Time,Task,Category,Notes
 2025-04-16,01:00 PM,Lunch,Health,Light meal
 2025-04-16,02:00 PM,Reading,Personal Development,Read a book on self-improvement
 2025-04-16,04:00 PM,Relaxation,Personal,Take a short nap or meditate
+"python -u ""d:\GITHUB\ThinkTrack\Daily Rutine\Rutine project\rutine1.py""",8:00,for testing,health,to checking that file is working or not
